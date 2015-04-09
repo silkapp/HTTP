@@ -1,5 +1,5 @@
 Name: HTTP
-Version: 4000.2.16.1
+Version: 4000.2.16.1.100
 Cabal-Version: >= 1.8
 Build-type: Simple
 License: BSD3
@@ -9,9 +9,9 @@ Maintainer: Ganesh Sittampalam <ganesh@earth.li>
 Homepage: https://github.com/haskell/HTTP
 Category: Network
 Synopsis: A library for client-side HTTP
-Description: 
+Description:
 
- The HTTP package supports client-side web programming in Haskell. It lets you set up 
+ The HTTP package supports client-side web programming in Haskell. It lets you set up
  HTTP connections, transmitting requests and processing the responses coming back, all
  from within the comforts of Haskell. It's dependent on the network package to operate,
  but other than that, the implementation is all written in Haskell.
@@ -74,12 +74,12 @@ flag network-uri
   default: True
 
 Library
-  Exposed-modules: 
+  Exposed-modules:
                  Network.BufferType,
                  Network.Stream,
                  Network.StreamDebugger,
                  Network.StreamSocket,
-                 Network.TCP,                
+                 Network.TCP,
                  Network.HTTP,
                  Network.HTTP.Headers,
                  Network.HTTP.Base,
@@ -98,7 +98,7 @@ Library
 
   -- note the test harness constraints should be kept in sync with these
   -- where dependencies are shared
-  Build-depends: base >= 3.0.3.1 && < 4.8, parsec >= 2.0 && < 3.2
+  Build-depends: base >= 3.0.3.1 && < 4.9, parsec >= 2.0 && < 3.2
   Build-depends: array >= 0.2.0.0 && < 0.6, old-time >= 1.0.0.0 && < 1.2, bytestring >= 0.9.1.3 && < 0.11
 
   Extensions: FlexibleInstances
@@ -119,7 +119,7 @@ Library
     else
       Build-depends: network >= 2.2.0.1 && < 2.6
 
-  build-tools: ghc >= 6.10 && < 7.10
+  build-tools: ghc >= 6.10 && < 7.11
 
   if flag(warn-as-error)
     ghc-options:      -Werror
@@ -171,5 +171,4 @@ Test-Suite test
       build-depends:
                          conduit >= 1.1 && < 1.2,
                          conduit-extra >= 1.1 && < 1.2
-
 
